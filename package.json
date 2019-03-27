@@ -1,0 +1,17 @@
+{
+  "name": "eth-ellipal-util",
+  "version": "1.0.0",
+  "description": "a utility for encoding and decoding Ethereum transactions as qrcode URIs for the [ellipal](https://www.ellipal.com/) hardware wallet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-util": "^6.1.0",
+    "rlp": "^2.2.3",
+    "string-extractor": "0.0.1"
+  },
+  "devDependencies": {}
+}
