@@ -1,6 +1,6 @@
 {
   "name": "eth-ellipal-util",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a utility for encoding and decoding Ethereum transactions as qrcode URIs for the [ellipal](https://www.ellipal.com/) hardware wallet.",
   "main": "index.js",
   "scripts": {
