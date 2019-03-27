@@ -31,10 +31,10 @@ function encodeTx (txParams) {
   const rlpEncoded = rlp.encode([
     txParams.nonce,
     txParams.gasPrice,
-    txParams.gasLimit,
+    txParams.gasLimit || txParams.gas,
     txParams.to,
     txParams.value,
-    txParams.data || '0x',
+    txParams.data || txParams.input || '0x',
     // here, "v" is replaced by chainId (EIP155)
     txParams.chainId || '0x',
     '0x',
@@ -65,11 +65,12 @@ function encodeUri ({ paginationPrefix, fromAddress, encodedTx, aType, cType, de
   assert(fromAddress, 'encodeUri - must specify "fromAddress"')
   assert(encodedTx, 'encodeUri - must specify "encodedTx"')
   const _paginationPrefix = paginationPrefix ? (paginationPrefix + '@') : ''
+  const _fromAddress = fromAddress.toLowerCase()
   const _aType = aType || 'ETH'
   const _cType = cType || 'ETH'
-  const _decimal = decimal !== undefined ? decimal : 18 
+  const _decimal = decimal !== undefined ? decimal : 18
   // example: "elp://2:8@tosign/ETH/address/tx/POLY/decimal"
-  const uri = `elp://${_paginationPrefix}tosign/${_aType}/${fromAddress}/${encodedTx}/${_cType}/${_decimal}`
+  const uri = `elp://${_paginationPrefix}tosign/${_aType}/${_fromAddress}/${encodedTx}/${_cType}/${_decimal}`
   return uri
 }
 
