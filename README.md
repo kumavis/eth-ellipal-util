@@ -1,5 +1,7 @@
 # eth-ellipal-util
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kumavis/eth-ellipal-util.svg)](https://greenkeeper.io/)
+
 a utility for encoding and decoding Ethereum transactions as qrcode URIs for the [ellipal](https://www.ellipal.com/) hardware wallet.
 
 
